@@ -1,6 +1,6 @@
-##A simple CRUD system for a Tech Store Web Application utilizing Laravel, Inertia and Vue##
+## DATABLIZZ - A simple CRUD system for a Tech Store Web Application utilizing Laravel, Inertia and Vue
 
-###After Cloning, do the following steps:###
+### After Cloning, do the following steps:
 1. composer install
 2. npm install
 3. Duplicate the .env.example file and rename it to .env
