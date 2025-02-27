@@ -6,6 +6,7 @@ import { createInertiaApp, Head, Link } from "@inertiajs/vue3";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy";
 
 import Main from "./Layouts/Main.vue";
+import { lightsOff } from "./theme";
 
 createInertiaApp({
     title: (title) => `My App ${title}`,
@@ -29,3 +30,5 @@ createInertiaApp({
         showSpinner: true,
     },
 });
+
+lightsOff()
