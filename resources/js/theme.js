@@ -1,24 +1,16 @@
-function lightsOff(){
-    if(localStorage.theme === 'dark' || 
-        (!("theme" in localStorage) && 
-        window.matchMedia("(prefers-color-scheme:dark)").matches))
-    {
-        document.documentElement.classList.add("dark");
-    }else{
-        document.documentElement.classList.remove("dark");
-    }
+function lightsOff() {
+    document.documentElement.classList.remove("dark"); // Remove dark mode class
+    localStorage.theme = "light"; // Explicitly set theme to light
 }
 
-function lightsOn(){
-    if(localStorage.theme === 'dark' || 
-        (!("theme" in localStorage) && 
-        window.matchMedia("(prefers-color-scheme:dark)").matches))
-    {
-        document.documentElement.classList.remove("dark");
-        localStorage.theme="light";
-    }else{
-        document.documentElement.classList.add("dark");
-        localStorage.theme="dark";
+
+function lightsOn() {
+    if (localStorage.theme === "dark") {
+        document.documentElement.classList.remove("dark"); // Remove dark mode
+        localStorage.theme = "light"; // Save preference
+    } else {
+        document.documentElement.classList.add("dark"); // Apply dark mode
+        localStorage.theme = "dark"; // Save preference
     }
 }
 

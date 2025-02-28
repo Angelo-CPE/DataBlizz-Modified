@@ -33,4 +33,6 @@ createInertiaApp({
     },
 });
 
-lightsOff();
+if (localStorage.getItem('theme') === 'light') {
+    lightsOff();
+}

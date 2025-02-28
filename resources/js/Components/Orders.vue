@@ -13,27 +13,27 @@
             <div class="row">
               <div class="col-md-6">
                 <label>Customer Name</label>
-                <v-text-field v-model="order.customer_name" label="Customer Name" required></v-text-field>
+                <v-text-field v-model="order.customer_name" label="Customer Name" required class="text-black"></v-text-field>
               </div>
               <div class="col-md-6">
                 <label>Email</label>
-                <v-text-field v-model="order.email" label="Email" required></v-text-field>
+                <v-text-field v-model="order.email" label="Email" required class="text-black"></v-text-field>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <label>Phone</label>
-                <v-text-field v-model="order.phone" label="Phone"></v-text-field>
+                <v-text-field v-model="order.phone" label="Phone" class="text-black"></v-text-field>
               </div>
               <div class="col-md-6">
                 <label>Product Name</label>
-                <v-text-field v-model="order.product_name" label="Product Name" required></v-text-field>
+                <v-text-field v-model="order.product_name" label="Product Name" required class="text-black"></v-text-field>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <label>Product ID</label>
-                <v-text-field v-model="order.product_id" label="Product ID" required></v-text-field>
+                <v-text-field v-model="order.product_id" label="Product ID" required class="text-black"></v-text-field>
               </div>
             </div>
             <div class="row">
@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'redaxios';
 
 export default {
   name: 'OrderManagement',

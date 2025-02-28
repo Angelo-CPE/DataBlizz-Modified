@@ -26,14 +26,26 @@ class OrderController extends Controller
     }
     
     public function store(Request $request)
-    {  
+    {
         try {
-            $order = $this->orders->create($request->all());
+            // Validate the incoming request
+            $validated = $request->validate([
+                'customer_name' => 'required|string|max:255',
+                'email' => 'required|email|unique:orders,email',
+                'phone' => 'nullable|string|max:255',
+                'product_name' => 'required|string|max:255',
+                'product_id' => 'required|string|max:255',
+            ]);
+    
+            // If validation passes, create the order
+            $order = $this->orders->create($validated);
+    
             return response()->json($order, 201);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
     }
+    
   
     public function show(string $id)
     {
