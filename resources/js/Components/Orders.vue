@@ -1,72 +1,62 @@
 <template>
-  <div class="bg-red-500 text-white p-4">
-    Tailwind is working!
-  </div>
-  
-  <div class="container">
-    <h3 align="center" class="mt-5">Order Management</h3>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-        <div class="form-area">
-          <form @submit.prevent="save" id="order-form">
-            <div class="row">
-              <div class="col-md-6">
-                <label>Customer Name</label>
-                <v-text-field v-model="order.customer_name" label="Customer Name" required class="text-black"></v-text-field>
-              </div>
-              <div class="col-md-6">
-                <label>Email</label>
-                <v-text-field v-model="order.email" label="Email" required class="text-black"></v-text-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Phone</label>
-                <v-text-field v-model="order.phone" label="Phone" class="text-black"></v-text-field>
-              </div>
-              <div class="col-md-6">
-                <label>Product Name</label>
-                <v-text-field v-model="order.product_name" label="Product Name" required class="text-black"></v-text-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Product ID</label>
-                <v-text-field v-model="order.product_id" label="Product ID" required class="text-black"></v-text-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 mt-3">
-                <v-btn type="submit" color="success" form="order-form">Save</v-btn>
-              </div>
-            </div>
-          </form>
-        </div>
+  <div class="bg-gray-600 min-h-screen py-12 px-6">
+    <div class="container mx-auto max-w-6xl bg-white p-6 rounded-lg shadow-lg">
+      <h3 class="text-4xl font-bold text-center mb-6 text-gray-1000">DataBlizz Order Form</h3>
 
-        <v-table theme="dark">
+      <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+        <form @submit.prevent="save" id="order-form">
+          <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
+            <div>
+              <label class="text-gray-700">Customer Name</label>
+              <v-text-field v-model="order.customer_name" label="Customer Name" required class="mt-2" outlined dense></v-text-field>
+            </div>
+            <div>
+              <label class="text-gray-700">Email</label>
+              <v-text-field v-model="order.email" label="Email" required class="mt-2" outlined dense></v-text-field>
+            </div>
+            <div>
+              <label class="text-gray-700">Phone</label>
+              <v-text-field v-model="order.phone" label="Phone" class="mt-2" outlined dense></v-text-field>
+            </div>
+            <div>
+              <label class="text-gray-700">Product Name</label>
+              <v-text-field v-model="order.product_name" label="Product Name" required class="mt-2" outlined dense></v-text-field>
+            </div>
+            <div>
+              <label class="text-gray-700">Product ID</label>
+              <v-text-field v-model="order.product_id" label="Product ID" required class="mt-2" outlined dense></v-text-field>
+            </div>
+          </div>
+          <div class="text-center mt-6">
+            <v-btn type="submit" color="success" form="order-form" class="w-full sm:w-auto">Save</v-btn>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+        <v-table theme="dark" class="w-full text-white">
           <thead>
             <tr>
-              <th class="text-left">Order ID</th>
-              <th class="text-left">Customer Name</th>
-              <th class="text-left">Email</th>
-              <th class="text-left">Phone</th>
-              <th class="text-left">Product Name</th>
-              <th class="text-left">Product ID</th>
-              <th class="text-left">Action</th>
+              <th class="text-left text-white">Order ID</th>
+              <th class="text-left text-white">Customer Name</th>
+              <th class="text-left text-white">Email</th>
+              <th class="text-left text-white">Phone</th>
+              <th class="text-left text-white">Product Name</th>
+              <th class="text-left text-white">Product ID</th>
+              <th class="text-left text-white">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="order in result" :key="order.id">
-              <td>{{ order.id }}</td>
-              <td>{{ order.customer_name }}</td>
-              <td>{{ order.email }}</td>
-              <td>{{ order.phone }}</td>
-              <td>{{ order.product_name }}</td>
-              <td>{{ order.product_id }}</td>
-              <td>
-                <v-btn type="button" color="info" @click="edit(order)">Edit</v-btn>
-                <v-btn type="button" color="danger" @click="remove(order)">Delete</v-btn>
+            <tr v-for="order in result" :key="order.id" class="border-b border-gray-200">
+              <td class="text-white">{{ order.id }}</td>
+              <td class="text-white">{{ order.customer_name }}</td>
+              <td class="text-white">{{ order.email }}</td>
+              <td class="text-white">{{ order.phone }}</td>
+              <td class="text-white">{{ order.product_name }}</td>
+              <td class="text-white">{{ order.product_id }}</td>
+              <td class="space-x-2">
+                <v-btn type="button" color="blue" @click="edit(order)" class="py-1 px-3 text-sm">Edit</v-btn>
+                <v-btn type="button" color="red" @click="remove(order)" class="py-1 px-3 text-sm">Delete</v-btn>
               </td>
             </tr>
           </tbody>
