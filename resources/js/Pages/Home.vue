@@ -1,11 +1,7 @@
 <script setup>
-import Orders from '../Components/Orders.vue';
-import { ref } from "vue";
-
-const clicked = ref(false);
+ import Introduction from '../Components/Introduction.vue';
 </script>
 
 <template>
-  <Orders />
+  <Introduction />
 </template>
-

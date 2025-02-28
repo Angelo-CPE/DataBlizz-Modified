@@ -5,9 +5,10 @@ import { createApp, h } from "vue";
 import { createInertiaApp, Head, Link } from "@inertiajs/vue3";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy";
 
-import vuetify from "./vuetify"; // ✅ Ensure Vuetify is imported
-import Main from "./Layouts/Main.vue"; // ✅ Ensure the path to Main.vue is correct
-import { lightsOff } from "./theme";
+import vuetify from "./vuetify";
+import Main from "./Layouts/Main.vue"; 
+
+// import { lightsOff } from "./theme";
 
 createInertiaApp({
     title: (title) => `My App ${title}`,
@@ -33,6 +34,6 @@ createInertiaApp({
     },
 });
 
-if (localStorage.getItem('theme') === 'light') {
-    lightsOff();
-}
+// if (localStorage.getItem('theme') === 'light') {
+//     lightsOff();
+// }

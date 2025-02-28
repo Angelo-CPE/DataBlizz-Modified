@@ -20,6 +20,7 @@
         "redaxios": "^0.5.1",
         "vite-plugin-vuetify": "^2.1.0",
         "vue": "^3.4.38",
-        "vuetify": "^3.7.14"
+        "vuetify": "^3.7.14",
+        "ziggy-js": "^2.5.2"
     }
 }
