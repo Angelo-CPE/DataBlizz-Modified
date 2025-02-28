@@ -11,7 +11,7 @@ import Main from "./Layouts/Main.vue";
 // import { lightsOff } from "./theme";
 
 createInertiaApp({
-    title: (title) => `My App ${title}`,
+    title: (title) => `DataBlizz ${title}`,
     resolve: (name) => {
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
         let page = pages[`./Pages/${name}.vue`];
@@ -23,7 +23,7 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
-            .use(vuetify) // ✅ Ensure Vuetify is applied
+            .use(vuetify) // 
             .component("Head", Head)
             .component("Link", Link)
             .mount(el);
