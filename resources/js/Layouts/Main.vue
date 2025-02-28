@@ -1,24 +1,23 @@
-<script setup>
-import {lightsOn} from '../theme';
-</script>
-
 <template>
-    <header class="bg-slate-800 text-white">
+    <v-app> <!-- Vuetify requires this -->
+      <header class="bg-slate-800 text-white">
         <nav class="p-6 mx-auto max-w-screen-lg flex items-center justify-between">
-            <Link :href="route('home')">Home</Link>
-            <div>
-                <button 
-                    @click="lightsOn"
-                    class="hover:bg-slate-700 w-6 h-6 grid 
-                    place-items-center rounded-full hover:outline outline-1 outline-white"
-                >
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-            </div>
+          <Link :href="route('home')">Home</Link>
+          <div>
+            <button 
+              @click="lightsOn"
+              class="hover:bg-slate-700 w-6 h-6 grid 
+              place-items-center rounded-full hover:outline outline-1 outline-white"
+            >
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </div>
         </nav>
-    </header>
-
-    <main class="p-6 mx-auto max-w-screen-lg">
+      </header>
+  
+      <v-main> <!-- ✅ This makes Vuetify styles work properly -->
         <slot />
-    </main>
-</template>
+      </v-main>
+    </v-app>
+  </template>
+  

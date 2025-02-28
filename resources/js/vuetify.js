@@ -1,5 +1,5 @@
-// vuetify.js
-import { createVuetify } from 'vuetify';
-import 'vuetify/styles';
+import "vuetify/styles"; // Import Vuetify's CSS
+import { createVuetify } from "vuetify";
 
-export default createVuetify();
+const vuetify = createVuetify();
+export default vuetify;

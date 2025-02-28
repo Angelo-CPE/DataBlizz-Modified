@@ -2,7 +2,6 @@
   <div class="bg-red-500 text-white p-4">
     Tailwind is working!
   </div>
-
   
   <div class="container">
     <h3 align="center" class="mt-5">Order Management</h3>

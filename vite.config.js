@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import vuetify from 'vite-plugin-vuetify'; // ✅ Import Vuetify plugin
 
 export default defineConfig({
     plugins: [
@@ -9,5 +10,6 @@ export default defineConfig({
             refresh: true,
         }),
         vue(),
+        vuetify({ autoImport: true }) // ✅ Ensure Vuetify is included
     ],
 });
